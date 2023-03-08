@@ -40,6 +40,7 @@ const authOptions = {
           },
         }),
       ], 
+      secret: 'cd05e4eb5652ce308b3517ff9ecac80a',
       pages: {
         signIn: '../../pages/login',
         // error: '../.../pages/dashboard',
