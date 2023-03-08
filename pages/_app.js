@@ -1,5 +1,5 @@
 import { SessionProvider } from "next-auth/react"
-import { AppContextProvider } from '../context/AppContext'
+import { AppContextProvider } from '../context/appContext'
 
 import '../styles/globals.css'
 

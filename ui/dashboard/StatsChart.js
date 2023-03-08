@@ -2,7 +2,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
 import {Pie} from 'react-chartjs-2'
 
-import { useAppContext } from "../../context/AppContext";
+import { useAppContext } from "../../context/appContext";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
