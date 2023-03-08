@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import {RiListCheck} from 'react-icons/ri'
 import {RxCalendar} from 'react-icons/rx'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 import OptionsButton from '../../ui/OptionsButton'
 import ProjectOptions from './ProjectOptions'
 

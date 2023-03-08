@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 import NewProjectModal from '../project/NewProject'
 import NewTaskModal from '../task/NewTask'
 import Alert from '../../ui/Alert'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 
 const Layout = (props) => {
   const {isNewProject, isNewTask, showAlert} = useAppContext()

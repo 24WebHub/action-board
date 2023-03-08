@@ -3,7 +3,7 @@ import { signOut } from 'next-auth/react'
 import {RiLogoutCircleLine} from 'react-icons/ri'
 import {BiUserCircle} from 'react-icons/bi'
 import {MdCircleNotifications} from 'react-icons/md'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 import Logo from './Logo'
 
 const Navigation =  () => {

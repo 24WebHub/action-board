@@ -4,7 +4,7 @@ import {FaProjectDiagram} from 'react-icons/fa'
 import {MdOutlineEditNote} from 'react-icons/md'
 import {PulseLoader} from 'react-spinners'
 
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 import FormInput from '../../ui/forms/FormInput'
 import Alert from '../../ui/Alert'
 

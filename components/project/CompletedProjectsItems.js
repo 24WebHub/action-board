@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import {RiListCheck} from 'react-icons/ri'
 import {CiTimer} from 'react-icons/ci'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 
 const CompletedProjectsItems = () => {
 const {myCompletedProjects, getMyCompletedProjects} = useAppContext()

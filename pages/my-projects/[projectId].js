@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import {PulseLoader} from 'react-spinners'
 import {RiListCheck} from 'react-icons/ri'
 import {CiTimer} from 'react-icons/ci'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 
 import Layout from "../../components/layout/Layout"
 import Head from 'next/head'

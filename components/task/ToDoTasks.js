@@ -1,5 +1,5 @@
 import {RxCalendar} from 'react-icons/rx'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 
 const ToDoTasks = () => {
 const {myTodoTasks, updateTaskStatus, getTaskDetails, handleTaskEdit, handleTask, deleteTask} = useAppContext()

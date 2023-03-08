@@ -1,7 +1,7 @@
 import { getSession } from 'next-auth/react'
 import { Fragment, useEffect } from 'react'
 import {PulseLoader} from 'react-spinners'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 import Layout from '../../components/layout/Layout'
 import ToDoTasks from '../../components/task/ToDoTasks'
 import InProgressTasks from '../../components/task/InProgressTasks'

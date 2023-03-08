@@ -1,6 +1,6 @@
 
 import {RxCalendar} from 'react-icons/rx'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 import { useEffect } from 'react'
 
 const InProgressTasks = () => {

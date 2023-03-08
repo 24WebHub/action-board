@@ -7,7 +7,7 @@ import {PulseLoader } from 'react-spinners'
 import {FiUserPlus} from 'react-icons/fi'
 import Brand from '../ui/login/Brand'
 import FormInput from '../ui/forms/FormInput'
-import { useAppContext } from '../context/AppContext'
+import { useAppContext } from '../context/appContext'
 import Alert from '../ui/Alert'
 
 

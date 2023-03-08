@@ -3,7 +3,7 @@ import { getSession } from 'next-auth/react'
 import {PulseLoader} from 'react-spinners'
 import StatsChart from '../ui/dashboard/StatsChart'
 import Layout from '../components/layout/Layout'
-import { useAppContext } from '../context/AppContext'
+import { useAppContext } from '../context/appContext'
 import AllProjectSummaryList from '../components/dashboard/AllProjectSummaryList'
 import Head from 'next/head'
 

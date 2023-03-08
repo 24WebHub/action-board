@@ -1,7 +1,7 @@
 import {RiListCheck} from 'react-icons/ri'
 import {RxCalendar} from 'react-icons/rx'
 import {FaUserAlt} from 'react-icons/fa'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/appContext'
 
 const AllProjectSummaryList = () => {
 

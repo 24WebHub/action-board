@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useAppContext } from "../../context/AppContext"
+import { useAppContext } from "../../context/appContext"
 import {BarLoader} from 'react-spinners'
 
 
