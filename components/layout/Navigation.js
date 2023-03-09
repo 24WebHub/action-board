@@ -24,7 +24,7 @@ const Navigation =  () => {
       <Logo />
   
   
-      <h2 className='font-semibold text-[15px] md-text-[16px] lg:text-[20px]'>ACTION BOARD</h2>
+      <h2 className='font-semibold text-[18px] lg:text-[20px]'>ACTION BOARD</h2>
       </div>
       {user &&
       <div className='flex items-center gap-8 text-slate-200'>
