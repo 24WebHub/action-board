@@ -5,9 +5,9 @@ import {RiListCheck} from 'react-icons/ri'
  
 const MobileNavigation = () => {
   return (
-    <div className='flex items-center text-[13px] justify-between p-1 bg-slate-100 my-1 mx-4 rounded-sm  md:hidden text-gray-600'>
+    <div className='flex items-center text-[15px] justify-between p-1 bg-slate-100 my-2 mx-4 rounded-sm  md:hidden text-gray-600'>
 
-      <Link href='/' className='flex gap-3 items-center font-semibold cursor-pointer w-full mx-[2px] py-[2px] px-2'>
+      <Link href='/' className='flex gap-2 items-center font-semibold cursor-pointer w-full mx-[2px] py-[2px] px-2'>
       <RxDashboard  className='' /><h3>Dashboard</h3>
       </Link>
       <div className='h-6 w-2 bg-white'></div>
