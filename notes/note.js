@@ -106,3 +106,12 @@
       //     alertText: 'Please ensure all tasks are completed',
       //   }
       // }
+
+    // STEPS
+    // Create and empty array
+    // Loop through my recent projects
+    // return the projects whose the length of the task array is greater than 0,
+    // loop through each project, loop through the tasks Array if if the task status is equal to ToDo,
+    // create a new object, containg the project tilte and the task spread.
+    // push the object into the empy array. 
+    

@@ -16,7 +16,7 @@ const authOptions = {
           try {
              client = await connectToDB()
           } catch (error) {
-            throw new Error('Connecting to the database failed')
+            throw new Error('Connection to the database failed')
           }
 
         const db = client.db()

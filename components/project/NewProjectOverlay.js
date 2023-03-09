@@ -49,8 +49,8 @@ function closeProjectEditHandler() {
   }
 
   return (
-    <div className='absolute top-[15vh] left-[25%] w-[50%]  rounded shadow-lg  text-gray-600  bg-white text-center z-20 overflow-hidden'>
-     <div className='px-10 py-2'>
+    <div className='absolute top-[15vh] left-[10%] w-[80%] md:left-[25%] md:w-[50%]  rounded shadow-lg  text-gray-600  bg-white text-center z-20 overflow-hidden'>
+     <div className='px-5 md:px-10 py-2'>
       <div onClick={closeProjectEditHandler} className='flex justify-end text-gray-400 p-2 cursor-pointer'><AiOutlineClose className='w-7 h-7 hover:rotate-[90deg] duration-150'/></div>
       
       <div className='mb-2'>
@@ -62,7 +62,7 @@ function closeProjectEditHandler() {
         </div>
         </div>
         
-        <div className='py-4 px-12 bg-slate-200 border-t'>
+        <div className='py-4 px-6 md:px-12 bg-slate-200 border-t'>
           <form onSubmit={submitFormHandler}>
           <FormInput id='project-title' type='text' label='Project Title' placeholder='Enter project title' value={title} onChange={e => setTitle(e.target.value)} />
           <FormInput id='project-date' type='date' label='Expected Completion Date' placeholder='Enter project title' value={completionDate} onChange={e => setCompletionDate(e.target.value)} />

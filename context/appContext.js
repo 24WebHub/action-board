@@ -518,7 +518,6 @@ const AppContextProvider = ({children}) => {
     if(taskStatus === 'In Progresss') {
       getMyInprogressTasks()
     }
-    handleTask()
   }
 
   return (

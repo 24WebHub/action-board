@@ -309,10 +309,10 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       isLoading: false,
-      // showAlert: true,
-      // alertType: 'success',
-      // alertText: action.payload.message,
-      // myProjects: action.payload.myProjects
+      showAlert: true,
+      alertType: 'success',
+      alertText: action.payload.message,
+      myProjects: action.payload.myProjects
     }
     case SET_PROJECT_AS_COMPLETED_ERROR:
       return {
@@ -373,7 +373,7 @@ const reducer = (state = initialState, action) => {
         isModalLoading: false,
         showModalAlert: true,
         alertType: 'success',
-        alertText: action.payload.message,
+        alertText: action.payload.alertText,
       }
       case EDIT_PROJECT_ERROR:
         return {
@@ -469,9 +469,9 @@ const reducer = (state = initialState, action) => {
     return {
       ...state, 
       isLoading: false,
-      // showAlert: true,
-      // alertType: 'success',
-      // alertText: action.payload.alertText
+      showAlert: true,
+      alertType: 'success',
+      alertText: action.payload.alertText
     }
     case UPDATE_TASK_STATUS_ERROR:
       return {
@@ -519,7 +519,7 @@ const reducer = (state = initialState, action) => {
             isModalLoading: false,
             showModalAlert: true,
             alertType: 'success',
-            alertText: action.payload.message,
+            alertText: action.payload.alertText,
           }
           case EDIT_TASK_ERROR:
             return {

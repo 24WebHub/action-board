@@ -86,7 +86,7 @@ export default function Login() {
       </Head>
 
       <div className='w-[100%] h-[100vh] bg-gradient-to-r from-sky-500 to-indigo-500 cursor-pointer z-10'></div>
-      <div className='items-center left-[25%] w-[50vw] top-[7vh] bottom-[5vh] text-black z-30 absolute'>
+      <div className='items-center left-[10%] w-[80vw] md:left-[25%] md:w-[50vw] top-[7vh] bottom-[5vh] text-black z-30 absolute'>
 
         <div className='flex items-center justify-center gap-4'><Brand  />
         <div className='text-4xl text-white font-bold '><h1>ACTION BOARD</h1></div>
@@ -112,7 +112,7 @@ export default function Login() {
          </div>
          
          <div className='py-4 px-12 bg-slate-100 border-t border-t-gray-200'>
-           <form onSubmit={userFormSubmitHandler} className='w-[40vw]'>
+           <form onSubmit={userFormSubmitHandler} className=' w-[60vw] md:w-[40vw]'>
           {!isRegistered && <FormInput id='full-name' type='text' label='Full Name' placeholder='Enter your names' onChange={e => setFullname(e.target.value)} />}
            <FormInput id='email' type='email' label='Email' placeholder='Enter your email' onChange={e => setEmail(e.target.value)} />
            <FormInput id='password' type='password' label='Password' placeholder='Enter your passowrd' onChange={e => setPassword(e.target.value)} />

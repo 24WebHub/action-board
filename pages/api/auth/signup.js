@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     try {
        client = await connectToDB()
     } catch (error) {
-      res.status(500).json({message: 'Connecting to the database failed'})
+      res.status(500).json({message: 'Could not fetch data from the server'})
     }
 
     const db = client.db()
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
     }
   } catch (error) {
     console.log(error)
-    res.status(500).json({message: 'The application encounter issues connecting to server'})
+    res.status(500).json({message: 'Could not fetch data from the server'})
     return
   }
 

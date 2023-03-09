@@ -49,13 +49,13 @@ const Dashboard = () => {
     <Layout>
     <div className=' bg-gradient-to-r from-sky-500 to-indigo-500 grid lg:grid-cols-2 rounded'>
 
-    <div className='pl-4 my-4 lg:border-r-2 border-white w-full'>
-    <div className='flex justify-center lg:justify-start items-center gap-4'>
+    <div className='p-2 my-4 lg:border-r-2 border-white w-full'>
+    <div className='flex justify-center items-center gap-4'>
     <StatsChart />
     <p className='space-x-1 text-white font-semibold'><span>Total:</span><span>{allProjects.length}</span></p>
     </div>
 
-    <div className='flex w-full justify-around items-center mt-4'>
+    <div className='flex w-full justify-around items-center mt-4 text-[15px] md:text-[16px]'>
     <div className='flex gap-3 items-center'><div className='w-3 h-3 bg-slate-300'></div><p>Not Started</p></div>
     <div className='flex gap-3 items-center'><div className='w-3 h-3 bg-orange-500'></div><p>In Progress</p></div>
         <div className='flex gap-3 items-center'><div className='w-3 h-3 bg-green-400'></div><p>Completed</p></div>
@@ -64,29 +64,29 @@ const Dashboard = () => {
     </div>
 
   
-    <div className='grid grid-cols-2 mx-4 my-6 gap-4 lg:gap-8'>
+    <div className='grid grid-cols-2 mx-2 sm:mx-8 text-[15px] sm:text-[16px]  my-6 gap-4 sm:gap-8 lg:gap-8'>
 
-    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 items-center'>
-    <div className='w-6 h-6 rounded-full bg-orange-500'></div>
+    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-orange-500'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>In progress</div>
     <div>{inProgressProject.length}</div>
     </div>
 
-    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 items-center'>
-    <div className='w-6 h-6 rounded-full bg-green-400'></div>
+    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2  sm:gap-4 items-center'>
+    <div className='w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-green-400'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Completed</div>
     <div>{completedProject.length}</div>
     </div>
-    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 items-center'>
-    <div className='w-6 h-6 rounded-full bg-red-500'></div>
+    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-red-500'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Overdue</div>
     <div>{overdueProject.length}</div>
     </div>
-    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 items-center'>
-    <div className='w-6 h-6 rounded-full bg-gray-400'></div>
+    <div className='bg-white max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-gray-400'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Not started</div>
     <div>{notStartedProject.length}</div>

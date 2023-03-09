@@ -27,12 +27,6 @@ const projectEditHandler = () => {
     handleProject()
 }
 
-
-
-
-if(isLoading) {
-  return <div className='mt-[45vh] text-center'>{isLoading && <PulseLoader color="#ffffff" />} </div>
-}
   
 if(Object.keys(projectDetails).length > 0) {
   const completedTasks = projectDetails.tasks.length > 0 && projectDetails.tasks.filter(task => task.status === 'Completed') 

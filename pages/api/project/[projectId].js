@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   try {
      client = await connectToDB()
   } catch (error) {
-    res.status(500).json({message: 'Connecting to the database failed'})
+    res.status(500).json({message: 'Could not fetch data from the server'})
     return
   }
 
@@ -29,7 +29,7 @@ if(req.method === 'GET') {
     const storedProject = await db.collection('projects').findOne({_id: ObjectId(projectId)})
 
     if(!storedProject) {
-      res.status(401).json({message: 'The system encounter problem fetching project from the server'})
+      res.status(401).json({message: 'Could not fetch data from the server'})
       return
     }
     

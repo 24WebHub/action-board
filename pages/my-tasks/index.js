@@ -1,6 +1,5 @@
 import { getSession } from 'next-auth/react'
 import { Fragment, useEffect } from 'react'
-import {PulseLoader} from 'react-spinners'
 import { useAppContext } from '../../context/appContext'
 import Layout from '../../components/layout/Layout'
 import ToDoTasks from '../../components/task/ToDoTasks'
@@ -20,10 +19,6 @@ const MyTask = () => {
   const newTaskHandler = () => {
     getMyRecentProjects()
     handleTask()
-  }
-
-  if(isLoading) {
-    <div className='mt-[45vh] mx-auto'>{isLoading && <PulseLoader color="#12A1E9" />} </div>
   }
  
   return (

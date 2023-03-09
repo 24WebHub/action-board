@@ -13,6 +13,10 @@ useEffect(() => {
 }, [])
 
 const handleTaskUpdate = (e, id) => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
   const taskInfo = {
     taskId: id,
     status: 'Completed'
@@ -51,7 +55,7 @@ const today = formatDate()
     <div className='leading-[110%] text-[14px] text-gray-500 px-2 font-semibold'>
       {task.title}
     </div>
-    <p className='font-motserrat text-gary-500 leading-[100%] text-end italic px-2 text-[12px]'>{task.projectTitle}</p>
+    <p className='font-motserrat text-gary-500 leading-[100%] text-end italic px-2 text-[12px]'>{task.project}</p>
     <div className='h-[1px] w-full bg-gray-100'></div> 
     </div>   
       <div className='flex justify-between text-[13px] my-4 mx-2'>

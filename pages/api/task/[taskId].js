@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   try {
      client = await connectToDB()
   } catch (error) {
-    res.status(500).json({message: 'Connecting to the database failed'})
+    res.status(500).json({message: 'Connection Problem'})
     return
   }
 
@@ -25,7 +25,9 @@ export default async function handler(req, res) {
 
 if(req.method === 'PUT') {
 const {taskId} = req.query
-const {title, completionDate} = req.body
+const {title, completionDate, project} = req.body
+
+console.log(title, completionDate, project)
 
 if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === '')  {
   res.status(422).json({message: 'Please fill all value properly'})
@@ -43,26 +45,25 @@ const  formatDate = ((date = new Date()) =>{
  
 const formatedDate = formatDate() 
 
-
+let existingProject;
 try {
-  const existingProject = await db.collection('projects').findOne({title: project})
-
-  if(completionDate > existingProject.completionDate) {
-    client.close()
-    res.status(433).json({message: 'Task completion date cannot exceed project completion date'})
-    return
-  }
-  
-  if(completionDate < formatedDate ) {
-    client.close()
-   res.status(423).json({message: 'Task completion date cannot preceed today'})
-    return
-    }
+   existingProject = await db.collection('projects').findOne({title: project})
+   console.log(existingProject)
 } catch (error) {
   client.close()
-  res.status(422).json({message: 'Something went wrong'})
+  res.status(422).json({message: 'Could not fetch data from the server'})
   return
 }
+
+if(completionDate > existingProject.completionDate) {
+  res.status(433).json({message: 'Task completion date cannot exceed project completion date'})
+  return
+}
+
+if(completionDate < formatedDate ) {
+ res.status(423).json({message: 'Task completion date cannot preceed today'})
+  return
+  }
 
 
 

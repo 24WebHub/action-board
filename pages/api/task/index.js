@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   try {
      client = await connectToDB()
   } catch (error) {
-    res.status(500).json({message: 'Connecting to the database failed'})
+    res.status(500).json({message: 'Could not fetch data from the server'})
     return
   }
 
@@ -26,9 +26,9 @@ export default async function handler(req, res) {
   // Create Task 
   if(req.method === 'POST') {
   
-    const {title, completionDate, status, project} = req.body;
+    const {title, completionDate, status} = req.body;
 
-    if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === ''||!status || status.trim() === '' ||!project || project.trim() === '')  {
+    if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === ''||!status || status.trim() === '')  {
       res.status(422).json({message: 'Please fill all value properly'})
       return 
     }
@@ -43,24 +43,26 @@ export default async function handler(req, res) {
      
     const formatedDate = formatDate() 
 
+    let existingProject;
 
     try {
-      const existingProject = await db.collection('projects').findOne({title: project})
+       existingProject = await db.collection('projects').findOne({title: project})
 
-      if(completionDate > existingProject.completionDate) {
-        client.close()
-        res.status(433).json({message: 'Task completion date cannot exceed project completion date'})
-        return
-      }
-      
-      if(completionDate < formatedDate ) {
-        client.close()
-       res.status(423).json({message: 'Task completion date cannot preceed today'})
-        return
-        }
     } catch (error) {
-      res.status(422).json({message: 'Something went wrong'})
+      res.status(422).json({message: 'Could not fetch data from the server'})
     }
+
+    if(completionDate > existingProject.completionDate) {
+      client.close()
+      res.status(433).json({message: 'Task completion date cannot exceed project completion date'})
+      return
+    }
+    
+    if(completionDate < formatedDate ) {
+      client.close()
+     res.status(423).json({message: 'Task completion date cannot preceed today'})
+      return
+      }
 
 
   const tasks = {
@@ -68,7 +70,6 @@ export default async function handler(req, res) {
     completionDate: completionDate,
     status: status,
     _id: new ObjectId,
-    projectTitle: project,
   }
 
   try {
@@ -128,7 +129,7 @@ if(status === 'In Progress') {
     }
   } catch (error) {
     client.close()
-    res.status(500).json({message: 'The application encounter issues connecting to server'})
+    res.status(500).json({message: 'Could not fetch data from the server'})
   }
     
 }

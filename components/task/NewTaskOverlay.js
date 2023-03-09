@@ -12,7 +12,7 @@ const NewTaskOverlay = () => {
   const {handleTask, editTask, handleTaskEdit, createTask, showModalAlert, isModalLoading, taskDetails, isTaskEdit, myRecentProjects, activeProjectTitle} = useAppContext()
   
   
-  const editInitTitle = taskDetails.projectTitle
+  const editInitTitle = taskDetails.project
 
   const nonEditInitTitle = activeProjectTitle && activeProjectTitle.trim().length !== '' ?activeProjectTitle : myRecentProjects.length > 0 ? myRecentProjects[0].title : ''
 
@@ -29,6 +29,7 @@ const NewTaskOverlay = () => {
     const editedTask = {
       title,
       completionDate,
+      project: taskDetails.project,
     }
   editTask(taskDetails.id, editedTask, taskDetails.status)
    handleTaskEdit()
@@ -37,7 +38,6 @@ const NewTaskOverlay = () => {
     const newTask = {
       title,
       completionDate,
-      project,
       status: 'To Do'
     }
     createTask(newTask)
@@ -45,7 +45,7 @@ const NewTaskOverlay = () => {
   
   }
 
-  const closeProjectEditHandler = () => {
+  const closeTaskEditHandler = () => {
     handleTask()
     if(isTaskEdit) {
       handleTaskEdit()
@@ -55,9 +55,9 @@ const NewTaskOverlay = () => {
   const projectOptions =myRecentProjects.map(myRecentProject => <option value={myRecentProject.title} key={myRecentProject.title}>{myRecentProject.title}</option>)
 
   return (
-    <div className='absolute top-[15vh] left-[25%] w-[50%]  rounded shadow-lg  text-gray-600  bg-white text-center z-20 overflow-hidden'>
-     <div className='px-10 py-2'>
-      <div onClick={closeProjectEditHandler} className='flex justify-end text-gray-400 p-2 cursor-pointer'><AiOutlineClose className='w-7 h-7 hover:rotate-[90deg] duration-150'/></div>
+    <div className='absolute top-[15vh] left-[10%] w-[80%] md:left-[25%] md:w-[50%]  rounded shadow-lg  text-gray-600  bg-white text-center z-20 overflow-hidden'>
+     <div className='px-5 md:px-10 py-2'>
+      <div onClick={closeTaskEditHandler} className='flex justify-end text-gray-400 p-2 cursor-pointer'><AiOutlineClose className='w-7 h-7 hover:rotate-[90deg] duration-150'/></div>
       
       <div className='mb-2'>
         <div className='flex justify-center mb-2'>
@@ -67,7 +67,7 @@ const NewTaskOverlay = () => {
         </div>
         </div>
         
-        <div className='py-4 px-12 bg-slate-200 border-t'>
+        <div className='py-4 px-6 md:px-12 bg-slate-200 border-t'>
           <form onSubmit={submitFormHandler} className=''>
           <FormInput id='task-title' type='text' label='Task Title' placeholder='Enter task title' value={title} onChange={e => setTitle(e.target.value)} />
 

@@ -15,7 +15,7 @@ const session = await getSession({req: req})
  try {
     client = await connectToDB()
  } catch (error) {
-   res.status(500).json({message: 'Connecting to the database failed'})
+   res.status(500).json({message: 'Could not fetch data from the server'})
    return
  }
 

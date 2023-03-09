@@ -1,4 +1,5 @@
 import React from 'react'
+import {PulseLoader} from 'react-spinners'
 import MobileNavigation from './MobileNavigation'
 import Navigation from './Navigation'
 import Sidebar from './Sidebar'
@@ -8,7 +9,7 @@ import Alert from '../../ui/Alert'
 import { useAppContext } from '../../context/appContext'
 
 const Layout = (props) => {
-  const {isNewProject, isNewTask, showAlert} = useAppContext()
+  const {isNewProject, isNewTask, showAlert, isLoading} = useAppContext()
   return (
     <React.Fragment>
     {isNewProject && <NewProjectModal />}
@@ -21,6 +22,7 @@ const Layout = (props) => {
     <Sidebar />
      <div className='flex-1 bg-slate-100 relative rounded p-2'>
      <div className='mx-20%'>
+     {isLoading && <div className='text-center'><PulseLoader color="#12A1E9" /></div>}
     {showAlert && <Alert /> }
     </div>
      {props.children}</div>

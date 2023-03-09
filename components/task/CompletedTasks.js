@@ -20,7 +20,7 @@ useEffect(() => {
     <div className='leading-[110%] text-[14px] text-gray-500 px-2 font-semibold'>
       {task.title}
     </div>
-    <p className='font-motserrat text-gary-500 leading-[100%] px-2 italic text-[12px]'>{task.projectTitle}</p>
+    <p className='font-motserrat text-gary-500 leading-[100%] px-2 italic text-[12px]'>{task.project}</p>
     <div className='h-[1px] w-full bg-gray-100'></div> 
     </div>   
          <div className='flex px-2 gap-2 text-[13px] justify-end items-center'><RxCalendar /><p className='text-gray-600 font-semibold'>{task.completionDate}</p></div>

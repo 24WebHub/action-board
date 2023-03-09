@@ -28,9 +28,6 @@ const draggingStop  = (e) => {
 
   }
 
-  if(isLoading) {
-    return <div className='mt-[45vh] text-center'>{isLoading && <PulseLoader color="#ffffff" />} </div>
-  }
 
   return (
     <Fragment>
