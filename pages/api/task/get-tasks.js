@@ -33,16 +33,7 @@ export default async function handler(req, res) {
   return
   }
   client.close()
-
   const myRecentProjectwithTasks = myRecentProjects.filter(myRecentProjectwithTask => myRecentProjectwithTask.tasks.length > 0)
-  
-      // STEPS
-    // Create and empty array
-    // Loop through my recent projects
-    // return the projects whose the length of the task array is greater than 0,
-    // loop through each project, loop through the tasks Array if if the task status is equal to ToDo,
-    // create a new object, containg the project tilte and the task spread.
-    // push the object into the empy array. 
     
 
 function filteredArray(arr, filter) {
@@ -62,27 +53,40 @@ function filteredArray(arr, filter) {
 }
 
 if(req.query.status === 'todo') {
- const filteredTask = filteredArray(myRecentProjectwithTasks, 'To Do' )
-  const sortedById = filteredTask.sort(function(a, b) {
+ const filteredTasks = filteredArray(myRecentProjectwithTasks, 'To Do' )
+ if(filteredTasks.length > 0 ) {
+  const sortedById = filteredTasks.sort(function(a, b) {
     return b._id.toString().localeCompare(a._id.toString());
   });
  res.status(200).json({myTodoTasks: sortedById})
+ return
+ }
+res.status(422).json({message: "No 'To Do' tasks to display"})
   }
+
 
   if(req.query.status === 'inprogress') {
   const filteredTask = filteredArray(myRecentProjectwithTasks, 'In Progress' )
-  const sortedUpdatedDate = filteredTask.sort(function(a, b) {
-  return b.updatedDate - a.updatedDate
-})
-    res.status(200).json({myInprogressTasks: sortedUpdatedDate})
+  if(filteredTask.length > 0) {
+    const sortedUpdatedDate = filteredTask.sort(function(a, b) {
+      return b.updatedDate - a.updatedDate
+    })
+        res.status(200).json({myInprogressTasks: sortedUpdatedDate})
+        return 
+  }
+  res.status(422).json({message: "No 'In Progress 'tasks to display"})
   }
 
   if(req.query.status === 'completed') {
   const filteredTask = filteredArray(myRecentProjectwithTasks, 'Completed' )
-  const sortedUpdatedDate = filteredTask.sort(function(a, b) {
-  return b.updatedDate - a.updatedDate
-})
-    res.status(200).json({myCompletedTasks: sortedUpdatedDate})
+  if(filteredTask.length > 0) {
+    const sortedUpdatedDate = filteredTask.sort(function(a, b) {
+      return b.updatedDate - a.updatedDate
+    })
+        res.status(200).json({myCompletedTasks: sortedUpdatedDate})
+        return
+  }
+  res.status(422).json({message: "No 'Completed' tasks to display"})
   }
 
 

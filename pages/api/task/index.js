@@ -26,9 +26,9 @@ export default async function handler(req, res) {
   // Create Task 
   if(req.method === 'POST') {
   
-    const {title, completionDate, status} = req.body;
+    const {title, completionDate, status, project} = req.body;
 
-    if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === ''||!status || status.trim() === '')  {
+    if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === ''||!status || status.trim() === '' ||!project || project.trim() === '')  {
       res.status(422).json({message: 'Please fill all value properly'})
       return 
     }
@@ -69,7 +69,7 @@ export default async function handler(req, res) {
     title: title, 
     completionDate: completionDate,
     status: status,
-    _id: new ObjectId,
+    _id: new ObjectId
   }
 
   try {

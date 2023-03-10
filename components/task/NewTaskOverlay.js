@@ -38,7 +38,8 @@ const NewTaskOverlay = () => {
     const newTask = {
       title,
       completionDate,
-      status: 'To Do'
+      status: 'To Do',
+      project
     }
     createTask(newTask)
   }

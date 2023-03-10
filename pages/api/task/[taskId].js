@@ -29,7 +29,7 @@ const {title, completionDate, project} = req.body
 
 console.log(title, completionDate, project)
 
-if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === '')  {
+if(!title || title.trim() === '' ||!completionDate ||completionDate.trim() === '' ||!project || project.trim() === '')  {
   res.status(422).json({message: 'Please fill all value properly'})
   return 
 }

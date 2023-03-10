@@ -5,7 +5,8 @@ import Head from 'next/head'
 import {RiLoginCircleLine} from 'react-icons/ri'
 import {PulseLoader } from 'react-spinners'
 import {FiUserPlus} from 'react-icons/fi'
-import Brand from '../ui/login/Brand'
+import BrandDesktop from '../ui/login/BrandDesktop'
+import BrandMobile from '../ui/login/BrandMobile'
 import FormInput from '../ui/forms/FormInput'
 import { useAppContext } from '../context/appContext'
 import Alert from '../ui/Alert'
@@ -88,8 +89,11 @@ export default function Login() {
       <div className='w-[100%] h-[100vh] bg-gradient-to-r from-sky-500 to-indigo-500 cursor-pointer z-10'></div>
       <div className='items-center left-[10%] w-[80vw] md:left-[25%] md:w-[50vw] top-[7vh] bottom-[5vh] text-black z-30 absolute'>
 
-        <div className='flex items-center justify-center gap-4'><Brand  />
-        <div className='text-4xl text-white font-bold '><h1>ACTION BOARD</h1></div>
+        <div className='flex items-center justify-center gap-4'>
+        <div className='hidden md:block' ><BrandDesktop  /></div> 
+        <div className='md:hidden'><BrandMobile /></div>
+
+        <div className='text-2xl md:text-4xl text-white font-bold '><h1>ACTION BOARD</h1></div>
         </div>
 
         <div className='rounded shadow-lg mt-12 text-gray-600  bg-white text-center'>
@@ -116,7 +120,7 @@ export default function Login() {
           {!isRegistered && <FormInput id='full-name' type='text' label='Full Name' placeholder='Enter your names' onChange={e => setFullname(e.target.value)} />}
            <FormInput id='email' type='email' label='Email' placeholder='Enter your email' onChange={e => setEmail(e.target.value)} />
            <FormInput id='password' type='password' label='Password' placeholder='Enter your passowrd' onChange={e => setPassword(e.target.value)} />
-           {!isRegistered && <p className='text-[13px] text-gray-500'>Password must contain at least one numeric value 0-9, one lowercase character a-z, one uppercase character A-Z, and one special character !#$%&*+,-./=?@\^_~</p>}
+           {!isRegistered && <p className='text-[13px] text-gray-500'>Password must be at least eight character long and contain at least a value from each of 0-9, a-z,  A-Z, and !#$%&*?@^~ </p>}
 
             {isModalLoading && <div className='flex justify-center items-center'><PulseLoader color="#12A1E9"/></div>}
             {showModalAlert && <Alert />}

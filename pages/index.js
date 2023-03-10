@@ -66,26 +66,26 @@ const Dashboard = () => {
   
     <div className='grid grid-cols-2 mx-2 sm:mx-8 text-[16px]  my-6 gap-4 sm:gap-8 lg:gap-8'>
 
-    <div className='bg-white max-h-18 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='bg-white max-h-18 md:max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
     <div className='w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-orange-500'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>In progress</div>
     <div>{inProgressProject.length}</div>
     </div>
 
-    <div className='bg-white max-h-18 rounded-lg flex mt-4 p-2 gap-2  sm:gap-4 items-center'>
+    <div className='bg-white max-h-18 md:max-h-16 rounded-lg flex mt-4 p-2 gap-2  sm:gap-4 items-center'>
     <div className='w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-400'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Completed</div>
     <div>{completedProject.length}</div>
     </div>
-    <div className='bg-white max-h-18 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='bg-white max-h-18 md:max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
     <div className='w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-500'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Overdue</div>
     <div>{overdueProject.length}</div>
     </div>
-    <div className='bg-white max-h-18 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
+    <div className='bg-white max-h-18 md:max-h-16 rounded-lg flex mt-4 p-2 gap-2 sm:gap-4 items-center'>
     <div className='w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-400'></div>
     <div className='w-[1px] h-6 bg-slate-400'></div>
     <div className=''>Not started</div>
