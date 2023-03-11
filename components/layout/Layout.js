@@ -20,7 +20,7 @@ const Layout = (props) => {
     <div className='w-full min-h-[700px] rounded flex'>
 
     <Sidebar />
-     <div className='flex-1 bg-slate-100 relative rounded p-2'>
+     <div className='flex-1 bg-slate-100 relative rounded-tr rounded-br p-2'>
      <div className='mx-20%'>
      {isLoading && <div className='text-center'><PulseLoader color="#12A1E9" /></div>}
     {showAlert && <Alert /> }

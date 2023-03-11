@@ -10,7 +10,7 @@ import OptionsButton from '../../ui/OptionsButton'
 
 
 const MyProject = () => {
-const {handleProject, setProjectAsCompleted, isLoading} =  useAppContext()
+const {handleProject, setProjectAsCompleted, myRecentProjects, myCompletedProjects} =  useAppContext()
 
 
 const draggingOver = (e) => {
@@ -37,16 +37,19 @@ const draggingStop  = (e) => {
         <meta name="description" content="ACTION BOARD - Lists of project by the active user" />
     </Head>
     <Layout>
-    <h1 className='mt-10 mx-4'>My Projects</h1>
+    {/* <h1 className='mt-10 mx-4'>My Projects</h1> */}
+
+    <div className='mt-10 mx-4 text-lg font-semibold text-cyan-900 flex gap-[6px] items-center'>My Projects<div className='h-2 w-2 mt-4 bg-green-400'/></div>
+
     <div className='grid lg:grid-cols-3 my-4 mx-4 gap-6 bg-inherit'>
 {/* Start of Recent Project Section */}
-      <div className='lg:col-span-2 bg-slate-200 rounded '>
+      <div className='lg:col-span-2 bg-orange-100 rounded '>
       <div>
       <div className='flex justify-between px-4 py-1'>
       
       <div className='flex gap-2 text-[14px] font-bold'>
       <p className=''>Recent Projects</p>
-      <p className='text-gray-500'>8</p>
+      <p className='text-gray-500'>{myRecentProjects.length}</p>
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-600 bold'>
@@ -78,7 +81,7 @@ const draggingStop  = (e) => {
       <div className='flex justify-between px-4 py-1'>
       <div className='flex gap-2 text-[14px] font-bold'>
       <p className=''>Completed</p>
-      <p className='text-gray-500'>20</p>
+      <p className='text-gray-500'>{myCompletedProjects.length}</p>
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-400 bold'>

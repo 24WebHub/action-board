@@ -9,7 +9,7 @@ import Head from 'next/head'
 
 
 const MyTask = () => {
-  const {handleTask,  getMyRecentProjects, getMyTodoTasks, isLoading} = useAppContext()
+  const {handleTask, myTodoTasks, myInprogressTasks, myCompletedTasks,  getMyRecentProjects, getMyTodoTasks, isLoading} = useAppContext()
 
   useEffect(() => {
     getMyTodoTasks()
@@ -29,13 +29,15 @@ const MyTask = () => {
         <meta name="description" content="ACTION BOARD - Lists of tasks for all recent projects by the active user" />
     </Head>
     <Layout>
-    <div className='grid sm:grid-cols-2 lg:grid-cols-3 my-16 mx-4 gap-6 bg-inherit'>
+    <div className='mt-10 mx-4 text-lg font-semibold text-cyan-900 flex gap-[6px] items-center'>My Tasks<div className='h-2 w-2 mt-4 bg-green-400'/></div>
+
+    <div className='grid sm:grid-cols-2 lg:grid-cols-3 my-4 mx-4 gap-6 bg-inherit'>
 {/*  */}
     <div className='rounded bg-slate-200 pb-4'>
       <div className='flex justify-between px-4 py-1'>
       <div className='flex gap-2 text-[14px] font-bold'>
       <p className=''>To Do</p>
-      <p className='text-gray-500'>2</p>
+      <p className='text-gray-500'>{myTodoTasks.length}</p>
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-600 bold'>
@@ -69,11 +71,11 @@ const MyTask = () => {
 
 
       {/* taskCategory  */}
-      <div className='rounded bg-slate-200 pb-4'>
+      <div className='rounded bg-orange-100 pb-4'>
       <div className='flex justify-between px-4 py-1'>
       <div className='flex gap-2 text-[14px] font-bold'>
       <p className=''>In Progress</p>
-      <p className='text-gray-500'>7</p>
+      <p className='text-gray-500'>{myInprogressTasks.length}</p>
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-400 bold'>
@@ -100,7 +102,7 @@ const MyTask = () => {
       <div className='flex justify-between px-4 py-1'>
       <div className='flex gap-2 text-[14px] font-bold'>
       <p className=''>Completed</p>
-      <p className='text-gray-500'>20</p>
+      <p className='text-gray-500'>{myCompletedTasks.length}</p>
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-400 bold'>

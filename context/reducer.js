@@ -320,7 +320,7 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         showAlert: true,
         alertType: 'danger',
-        alertText: action.payload.message
+        alertText: action.payload.alertText
       }
     case DELETE_PROJECT_BEGIN:
       return {

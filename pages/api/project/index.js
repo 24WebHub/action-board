@@ -117,12 +117,14 @@ export default async function handler(req, res) {
 }
     // it they are completed, go ahead and set the project as completed
   try {
-  const updatedProject = await db.collection('projects').updateOne({_id: ObjectId(projectId)}, {$set: {status: status, updatedDate: updatedDate}})
-    res.status(200).json({message: "Project updated successfully"})
+   await db.collection('projects').updateOne({_id: ObjectId(projectId)}, {$set: {status: status, updatedDate: updatedDate}})
   } catch (error) {
+    client.close()
     res.status(500).json({message: 'Could not update the project'})
     return
   }
+  client.close()
+  res.status(200).json({message: "Project updated successfully"})
    }
 
   //  Delete Project
