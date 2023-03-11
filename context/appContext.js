@@ -232,7 +232,6 @@ const AppContextProvider = ({children}) => {
               }, 3000)
           }
       } catch (error) {
-        console.log(error)
         dispatch({type: CREATE_USER_ERROR, payload: {message: error.response.data.message || 'Something went wrong'}})
         } 
             clearAlert()
@@ -366,7 +365,6 @@ const AppContextProvider = ({children}) => {
         const {data} = response
         dispatch({type: GET_PROJECT_DETAILS_SUCCESS, payload: {project: data.project}})
       } catch (error) {
-        console.log(error)
         dispatch({type: GET_PROJECT_DETAILS_ERROR, payload: {message: error.response.data.message}})
       }
 
@@ -440,7 +438,6 @@ const AppContextProvider = ({children}) => {
       try {
         const response = await axios.get('api/task/get-tasks?status=completed')
           const {data} = response
-          console.log(data.myCompletedTasks)
           dispatch({type: GET_MY_COMPLETED_TASKS_SUCCESS, payload: {myCompletedTasks: data.myCompletedTasks}})
       } catch (error) {
         dispatch({type: GET_MY_COMPLETED_TASKS_ERROR, payload: {message: error.response.data.message}})
@@ -449,14 +446,12 @@ const AppContextProvider = ({children}) => {
      }
 
   const updateTaskStatus = async(taskInfo) => {
-    console.log(taskInfo)
     dispatch({type: UPDATE_TASK_STATUS_BEGIN})
     try {
        const response =  await axios.patch('api/task', taskInfo)
         const {data} = response 
         dispatch({type: UPDATE_TASK_STATUS_SUCCESS, payload: {alertText: data.message }})
     } catch (error) {
-      console.log(error)
       dispatch({type: UPDATE_TASK_STATUS_ERROR, payload: {message: error.response.data.message}})
     }
     clearAlert()

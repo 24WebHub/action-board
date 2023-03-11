@@ -41,7 +41,7 @@ const draggingStop  = (e) => {
 
     <div className='mt-10 mx-4 text-lg font-semibold text-cyan-900 flex gap-[6px] items-center'>My Projects<div className='h-2 w-2 mt-4 bg-green-400'/></div>
 
-    <div className='grid lg:grid-cols-3 my-4 mx-4 gap-6 bg-inherit'>
+    <div className='grid lg:grid-cols-3 my-4 mx-4 gap-8 lg:gap-6 bg-inherit'>
 {/* Start of Recent Project Section */}
       <div className='lg:col-span-2 bg-orange-100 rounded '>
       <div>
@@ -76,7 +76,7 @@ const draggingStop  = (e) => {
 {/* End of Recent Projects Section */}
 
 {/*Start of Completed Projct Section*/}
-<div className='bg-green-300 rounded hidden lg:grid overflow-hidden'>
+<div className='bg-green-300 rounded grid overflow-hidden'>
       <div className=''>
       <div className='flex justify-between px-4 py-1'>
       <div className='flex gap-2 text-[14px] font-bold'>

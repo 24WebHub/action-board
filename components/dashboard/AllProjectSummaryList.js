@@ -23,7 +23,7 @@ const allRecentProjects = allProjects.filter(allProject => allProject.status !==
         
         return   <li key={allRecentProject._id} className='p-3 bg-white rounded-lg space-2-3 shadow'>
         <div className='flex justify-between'>
-        <h3 className='leading-[120%] text-[16px] font-semibold text-gray-500'>{allRecentProject.title}</h3>
+        <h3 className='leading-[120%] text-[14px] pr-2 font-semibold text-gray-500'>{allRecentProject.title}</h3>
         <div className={`w-[2px] h-4 ${allRecentProject.tasks.length > 0 && completedTasklength === allRecentProject.tasks.length ? 'bg-green-400' : 'bg-orange-400'} `}></div>
         </div>
     

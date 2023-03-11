@@ -36,7 +36,7 @@ const createTaskHandler = (e, projectTitle) => {
 return <li draggable onDragStart={e=>draggingStarted(e, recentProject._id)} key={recentProject._id} className=''>
 <div className='p-2 bg-white rounded shadow'>
 <div className='flex justify-between mb-3 '>
-<h3 className='leading-[120%] text-[16px] font-semibold text-gray-500'>{recentProject.title}</h3>
+<h3 className='leading-[120%] text-[14px] font-semibold text-gray-500 pr-2'>{recentProject.title}</h3>
 <div>
 <div className='flex gap-2'>
   <button onClick={e=>createTaskHandler(e, recentProject.title)} className='font-semibold text-gray-500'>+</button>

@@ -19,7 +19,7 @@ useEffect(() => {
     return <li key={completedProject._id}>
     <div className='p-3 bg-white rounded space-y-3 shadow'>
     <div className='flex justify-between'>
-    <h3 className='leading-[120%] text-[16px] font-semibold text-gray-500'>{completedProject.title}</h3>
+    <h3 className='leading-[120%] text-[14px] font-semibold text-gray-500'>{completedProject.title}</h3>
     </div>
 
     

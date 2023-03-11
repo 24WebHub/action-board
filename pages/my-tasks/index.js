@@ -31,7 +31,7 @@ const MyTask = () => {
     <Layout>
     <div className='mt-10 mx-4 text-lg font-semibold text-cyan-900 flex gap-[6px] items-center'>My Tasks<div className='h-2 w-2 mt-4 bg-green-400'/></div>
 
-    <div className='grid sm:grid-cols-2 lg:grid-cols-3 my-4 mx-4 gap-6 bg-inherit'>
+    <div className='grid sm:grid-cols-2 lg:grid-cols-3 my-4 mx-4 gap-8 lg:gap-6 bg-inherit'>
 {/*  */}
     <div className='rounded bg-slate-200 pb-4'>
       <div className='flex justify-between px-4 py-1'>
