@@ -6,7 +6,7 @@ import OptionsButton from '../../ui/OptionsButton'
 import ProjectOptions from './ProjectOptions'
 
 const RecentProjectsItems = () => {
-const {myRecentProjects,getActiveProjectTitle, getMyRecentProjects} = useAppContext()
+const {myRecentProjects,getActiveProjectTitle, getMyRecentProjects, isLoading} = useAppContext()
 
 useEffect(() => {
   getMyRecentProjects()
@@ -25,7 +25,7 @@ const createTaskHandler = (e, projectTitle) => {
 
   return (
     <ul  className='grid sm:grid-cols-2 gap-6 m-3'>
-    {myRecentProjects.length === 0 ? <p className='p-2 text-red-400 text-center lg:col-span-2'>Empty!!!</p>: myRecentProjects.map(recentProject => {
+    {!isLoading && myRecentProjects.length === 0 ? <p className='p-2 text-red-400 text-center lg:col-span-2'>Empty!!!</p>: myRecentProjects.map(recentProject => {
 
       const completedTasks = recentProject.tasks.length > 0 && recentProject.tasks.filter(task => task.status === 'Completed') 
  
@@ -57,8 +57,8 @@ return <li draggable onDragStart={e=>draggingStarted(e, recentProject._id)} key=
 
 </div>
 
-<div className='h-[8px]  w-full relative rounded border border-gray-300'>
-  <div className={`h-[8px] bg-green-300 absolute rounded`} style={{width: `${progressWidth}%`}}></div>
+<div className='h-[6px]  w-full relative rounded border border-gray-300'>
+  <div className={`h-[6px] absolute rounded ${progressWidth < 100 ? 'bg-amber-400' : 'bg-green-400'}  `} style={{width: `${progressWidth}%`}}></div>
 
       </div>
 

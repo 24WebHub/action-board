@@ -2,7 +2,7 @@ import {RxCalendar} from 'react-icons/rx'
 import { useAppContext } from '../../context/appContext'
 
 const ToDoTasks = () => {
-const {myTodoTasks, updateTaskStatus, getTaskDetails, handleTaskEdit, handleTask, deleteTask} = useAppContext()
+const {myTodoTasks, updateTaskStatus, getTaskDetails, handleTaskEdit, handleTask, deleteTask, isLoading} = useAppContext()
 
 const handleTaskUpdate = (e, id) => {
   window.scrollTo({
@@ -40,7 +40,7 @@ const taskEditHandler = (e, id, title, project, completionDate, status) => {
 
   return (
     <ul className='space-y-4'>
-    {myTodoTasks.length === 0 ? <p className='p-2 text-red-400 text-center'>Empty!!!</p> : myTodoTasks && myTodoTasks.map(task => 
+    {!isLoading && myTodoTasks.length === 0 ? <p className='p-2 text-red-400 text-center'>Empty!!!</p> :myTodoTasks.map(task => 
         <div   key={task._id} className='mx-3 bg-white rounded py-2 shadow'>
     <div className='space-y-2'>
     <div className='leading-[110%] text-[14px] text-gray-500 px-2 font-semibold'>

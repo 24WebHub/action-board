@@ -40,8 +40,8 @@ const allRecentProjects = allProjects.filter(allProject => allProject.status !==
     </div>
 
     <div className='flex gap-8 items-center'>
-    <div className='h-[8px]  w-full relative rounded border border-gray-300'>
-  <div className={`h-[8px] bg-green-300 absolute rounded`} style={{width: `${progressWidth}%`}}></div>
+    <div className='h-[6px]  w-full relative rounded border border-gray-300'>
+  <div className={`h-[6px] ${progressWidth < 100 ? 'bg-amber-400' : 'bg-green-400'} absolute rounded`} style={{width: `${progressWidth}%`}}></div>
       </div>
 
       <p className='text-[14px] text-gray-700'>{progressWidth}%</p>

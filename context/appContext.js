@@ -214,7 +214,7 @@ const AppContextProvider = ({children}) => {
     
     const clearAlert = () => {
       setTimeout(() => {dispatch({type: CLEAR_ALERT})
-    }, 2000)
+    }, 4000)
     }
 
     // User functions
@@ -265,7 +265,7 @@ const AppContextProvider = ({children}) => {
             payload: {alertText: data.message }})
             setTimeout(() => {
               handleProject();
-            }, 3000)
+            }, 4000)
       } catch (error) {
         dispatch({type: CREATE_PROJECT_ERROR, payload: {message: error.response.data.message }})
         } 
@@ -379,7 +379,7 @@ const AppContextProvider = ({children}) => {
           dispatch({type: EDIT_PROJECT_SUCCESS, payload: {alertText: data.message}})
           setTimeout(() => {
             handleProject();
-          }, 3000)
+          }, 4000)
       } catch (error) {
         dispatch({type: EDIT_PROJECT_ERROR, payload: {message: error.response.data.message}})
       }
@@ -398,7 +398,7 @@ const AppContextProvider = ({children}) => {
             payload: {alertText: data.message }})
             setTimeout(() => {
               handleTask();
-            }, 3000)
+            }, 4000)
       } catch (error) {
         dispatch({type: CREATE_TASK_ERROR, payload: {message: error.response.data.message }})
         } 
@@ -501,7 +501,7 @@ const AppContextProvider = ({children}) => {
         dispatch({type: EDIT_TASK_SUCCESS, payload: {alertText: data.message}})
         setTimeout(() => {
           handleTask();
-        }, 3000)
+        }, 4000)
     } catch (error) {
       dispatch({type: EDIT_TASK_ERROR, payload: {message: error.response.data.message}})
     }
