@@ -25,7 +25,7 @@ const createTaskHandler = (e, projectTitle) => {
 
   return (
     <ul  className='grid sm:grid-cols-2 gap-6 m-3'>
-    {!isLoading && myRecentProjects.length === 0 ? <p className='p-2 text-red-400 text-center lg:col-span-2'>Empty!!!</p>: myRecentProjects.map(recentProject => {
+    {!isLoading && myRecentProjects.length === 0 ? <p className='p-2 text-red-400 text-center lg:col-span-2'>Empty!!!</p> : !isLoading && myRecentProjects.length > 0 &&  myRecentProjects.map(recentProject => {
 
       const completedTasks = recentProject.tasks.length > 0 && recentProject.tasks.filter(task => task.status === 'Completed') 
  

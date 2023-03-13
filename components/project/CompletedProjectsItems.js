@@ -14,7 +14,7 @@ useEffect(() => {
   return (
     <ul  className='grid gap-6 m-3'>
     
-      {!isLoading && myCompletedProjects.length === 0 ? <p className='p-2 text-red-400 text-center'>Empty!!!</p>: myCompletedProjects.map(completedProject => {
+      {!isLoading && myCompletedProjects.length === 0 ? <p className='p-2 text-red-400 text-center'>Empty!!!</p>: !isLoading && myCompletedProjects.length > 0 && myCompletedProjects.map(completedProject => {
 
     return <li key={completedProject._id}>
     <div className='p-3 bg-white rounded space-y-3 shadow'>

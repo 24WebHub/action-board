@@ -10,7 +10,7 @@ import OptionsButton from '../../ui/OptionsButton'
 
 
 const MyProject = () => {
-const {handleProject, setProjectAsCompleted, myRecentProjects, myCompletedProjects} =  useAppContext()
+const {handleProject, setProjectAsCompleted, myRecentProjects, myCompletedProjects, isLoading} =  useAppContext()
 
 
 const draggingOver = (e) => {
@@ -53,7 +53,7 @@ const draggingStop  = (e) => {
       </div>
 
       <div className='flex gap-2 text-[20px] text-gray-600 bold'>
-        <button onClick={handleProject}>+</button>
+        <button  disabled={isLoading} onClick={handleProject} className={`${isLoading && 'text-gray-300'}`}>+</button>
         <OptionsButton>
         </OptionsButton>
       </div>
@@ -65,10 +65,10 @@ const draggingStop  = (e) => {
     <div></div>
     <div></div>
     <div></div>
-    <div className=''>
-    <div onClick={handleProject} className='w-11 h-11 rounded-full bg-red-400 mx-auto cursor-pointer shadow-lg text-white text-[24px] text-center font-black'>
+    <div className='mt-4'>
+    <button disabled={isLoading} onClick={handleProject} className={`w-11 h-11 rounded-full bg-red-400 mx-auto ${isLoading && 'bg-gray-300'}  shadow-lg text-white text-[24px] text-center font-black`}>
     + 
-    </div>
+    </button>
     </div>
     </div>
       </div>
@@ -84,7 +84,7 @@ const draggingStop  = (e) => {
       <p className='text-gray-500'>{myCompletedProjects.length}</p>
       </div>
 
-      <div className='flex gap-2 text-[20px] text-gray-400 bold'>
+      <div className='flex gap-2 text-[20px] text-gray-300 bold'>
         <p className=''>+</p>
         <div className=''>
         <p className='leading-[30%]'>.</p>

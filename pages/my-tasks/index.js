@@ -40,8 +40,8 @@ const MyTask = () => {
       <p className='text-gray-500'>{myTodoTasks.length}</p>
       </div>
 
-      <div className='flex gap-2 text-[20px] text-gray-600 bold'>
-        <button onClick={newTaskHandler} className='cursor-pointer'>+</button>
+      <div className='flex gap-2 text-[20px] text-gray-300 bold'>
+        <button disabled={isLoading} onClick={newTaskHandler} className={`${!isLoading && 'text-gray-600'}`}>+</button>
         <div className='cursor-pointer'>
         <p className='leading-[30%]'>.</p>
         <p className='leading-[30%]'>.</p>
@@ -59,9 +59,9 @@ const MyTask = () => {
         <div></div>
         <div></div>
         <div className=''>
-    <div onClick={handleTask} className='w-11 h-11 rounded-full bg-red-400 mx-auto cursor-pointer shadow-lg text-white text-[24px] text-center font-black'>
+    <button disabled={isLoading} onClick={handleTask} className={`w-11 h-11 rounded-full ${isLoading ? 'bg-gray-300' : 'bg-red-400 mx-auto'}  shadow-lg text-white text-[24px] text-center font-black`}>
     + 
-    </div>
+    </button>
     </div>
       </div>
 
@@ -78,7 +78,7 @@ const MyTask = () => {
       <p className='text-gray-500'>{myInprogressTasks.length}</p>
       </div>
 
-      <div className='flex gap-2 text-[20px] text-gray-400 bold'>
+      <div className='flex gap-2 text-[20px] text-gray-300 bold'>
         <p className=''>+</p>
         <div className=''>
         <p className='leading-[30%]'>.</p>
@@ -105,7 +105,7 @@ const MyTask = () => {
       <p className='text-gray-500'>{myCompletedTasks.length}</p>
       </div>
 
-      <div className='flex gap-2 text-[20px] text-gray-400 bold'>
+      <div className='flex gap-2 text-[20px] text-gray-300 bold'>
         <p className=''>+</p>
         <div className=''>
         <p className='leading-[30%]'>.</p>
